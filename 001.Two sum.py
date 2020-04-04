@@ -6,3 +6,5 @@ class Solution(object):
                 if(target==(nums[i]+nums[j])):
                     return([i,j])
                 j+=1
+                
+#This code is done by Tanish Rohith.G
