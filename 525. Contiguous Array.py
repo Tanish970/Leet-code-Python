@@ -6,7 +6,8 @@ class Solution:
             if v==1:c+=1
             if c in d:
                 l=i-d[c]
-                m=max(l,m)
+                if(l>m):
+                    m=l
             else:
                 d[c]=i
         return m
