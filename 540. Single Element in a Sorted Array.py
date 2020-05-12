@@ -1,7 +1,22 @@
 class Solution(object):
     def singleNonDuplicate(self, nums):
-        le=len(nums)
-        if le==1:return nums[0]
-        for i in range(0,len(nums)-1,2):
-            if(nums[i]!=nums[i+1]):return nums[i]
-        if le%2!=0:return nums[le-1]
+        if len(nums)==1:return nums[0]
+        l=0
+        r=len(nums)-1
+        while l<r:
+            mid=(l+r)//2
+            if mid%2!=0:
+                if nums[mid]==nums[mid+1]:
+                    r=mid-2
+                elif nums[mid]==nums[mid-1]:
+                    l=mid+1
+                else:return nums[mid]
+            else:
+                
+                if nums[mid]==nums[mid+1]:
+                    l=mid+1
+                elif nums[mid]==nums[mid-1]:
+                    r=mid-2
+                else:return nums[mid]
+        return nums[l]
+                
